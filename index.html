@@ -9,6 +9,9 @@
   <title>Cet Phoenix - Recursos para Wargames & Eventos Nexo Alpha</title>
   <meta name="description" content="Portal oficial de Cet Phoenix: recursos, herramientas y builders para wargames, así como información y cobertura de eventos de Nexo Alpha y la comunidad de juegos de mesa.">
 
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <!-- Fuente Google Fonts (Roboto) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,28 +52,31 @@
     header {
       background-color: #181818;
       border-bottom: 3px solid var(--accent-color);
-      padding: 30px 20px;
+      padding: 25px 20px;
       text-align: center;
     }
 
     .header-container {
       max-width: 1200px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
     }
 
-    header h1 {
-      margin: 0;
-      color: var(--accent-color);
-      font-size: 2.5rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .site-logo {
+      max-width: 320px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
     }
 
     header p {
-      margin: 8px 0 0 0;
+      margin: 0;
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      font-weight: 500;
     }
 
     nav {
@@ -118,6 +124,9 @@
     @media (max-width: 900px) {
       .main-container {
         grid-template-columns: 1fr;
+      }
+      .site-logo {
+        max-width: 240px;
       }
     }
 
@@ -307,7 +316,10 @@
 
   <header>
     <div class="header-container">
-      <h1>Cet Phoenix</h1>
+      <!-- LOGO DE CET PHOENIX -->
+      <a href="/">
+        <img src="logo.png" alt="Cet Phoenix - Estrategia, Wargames, Diversión" class="site-logo">
+      </a>
       <p>Recursos para Wargames, Juegos Alternativos & Eventos de Nexo Alpha</p>
     </div>
   </header>
@@ -429,7 +441,7 @@
       <div class="sidebar-widget" id="nosotros">
         <h3 style="margin-top: 0; color: var(--accent-color);">Cet Phoenix</h3>
         <p style="font-size: 0.85rem; color: var(--text-muted);">
-          Espacio dedicado a la creación y difusión de recursos para wargames, herramientas de desarrollo y divulgación de actividades del <strong>Club de Juegos Alternativos Nexo Alpha</strong> en Huancayo, Perú.
+          Espacio dedicado a la creación y difusión de recursos para wargames, herramientas de desarrollo y divulgación de actividades del <strong>Club de Juegos Alternativos Nexo Alpha</strong>[cite: 1].
         </p>
       </div>
 
@@ -440,11 +452,11 @@
   <!-- PIE DE PÁGINA (REQUISITO ADSENSE) -->
   <footer>
     <div>
-      © 2026 Cet Phoenix - Desarrollado por <a href="mailto:cespinal826@gmail.com">Christ E.</a>
+      © 2026 Cet Phoenix - Desarrollado por <a href="mailto:cespinal826@gmail.com">Christ E.</a>[cite: 1]
     </div>
     <div class="footer-links">
-      <a href="privacy-policy.html">Política de Privacidad</a> | 
-      <a href="terms.html">Términos de Uso</a>
+      <a href="privacy-policy.html">Política de Privacidad</a>[cite: 1] | 
+      <a href="terms.html">Términos de Uso</a>[cite: 1]
     </div>
   </footer>
 
