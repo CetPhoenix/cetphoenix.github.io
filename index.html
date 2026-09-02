@@ -18,22 +18,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
   <style>
+    /* PALETA DE COLORES EXTRAÍDA DEL LOGO CET PHOENIX */
     :root {
-      --bg-color: #121212;
-      --panel-bg: #1e1e1e;
-      --card-bg: #2a2a2a;
-      --accent-color: #ff5500;
-      --accent-hover: #e04b00;
-      --text-color: #f0f0f0;
-      --text-muted: #aaa;
-      --border-color: #333;
-      
-      /* Colores temáticos por juego */
-      --color-gaslands: #ff5500;
+      --bg-color: #0f1319;            /* Fondo azul noche muy oscuro */
+      --panel-bg: #161b22;          /* Panel contenedor ligeramente más claro */
+      --card-bg: #1f2631;           /* Fondo de tarjetas */
+      --accent-orange: #f57c00;      /* Naranja Fuego del Fénix */
+      --accent-blue: #0d86cd;        /* Azul Eléctrico/Cibernético del Fénix */
+      --accent-gold: #ffa726;        /* Oro/Ámbar de acentos */
+      --text-color: #f0f4f8;        /* Blanco cálido legible */
+      --text-muted: #9eb1c2;        /* Gris azulado atenuado */
+      --border-color: #2b3544;      /* Borde oscuro con matiz azul */
+
+      /* Colores temáticos para etiquetas de juegos */
+      --color-gaslands: #f57c00;
       --color-bloodbowl: #d32f2f;
-      --color-grimdark: #7b1fa2;
+      --color-grimdark: #8e24aa;
       --color-lastdays: #2e7d32;
-      --color-nexo: #008CBA;
+      --color-nexo: #0d86cd;
     }
 
     * {
@@ -49,11 +51,13 @@
       line-height: 1.6;
     }
 
+    /* HEADER CON RESPLANDOR TIPO FÉNIX */
     header {
-      background-color: #181818;
-      border-bottom: 3px solid var(--accent-color);
-      padding: 25px 20px;
+      background: linear-gradient(180deg, #121820 0%, #0f1319 100%);
+      border-bottom: 3px solid var(--accent-orange);
+      padding: 30px 20px 20px;
       text-align: center;
+      position: relative;
     }
 
     .header-container {
@@ -62,14 +66,20 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
     }
 
     .site-logo {
-      max-width: 320px;
+      max-width: 380px;
       height: auto;
       display: block;
-      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+      /* Resplandor suave dual (naranja / azul) detrás del logo */
+      filter: drop-shadow(0 0 20px rgba(245, 124, 0, 0.25)) drop-shadow(0 0 20px rgba(13, 134, 205, 0.25));
+      transition: transform 0.3s ease;
+    }
+
+    .site-logo:hover {
+      transform: scale(1.02);
     }
 
     header p {
@@ -77,14 +87,17 @@
       color: var(--text-muted);
       font-size: 1.05rem;
       font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
+    /* NAVEGACIÓN PRINCIPAL */
     nav {
-      background-color: #1f1f1f;
+      background-color: #121720;
       border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     .nav-container {
@@ -102,19 +115,22 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 0.95rem;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border-radius: 4px;
-      transition: background-color 0.2s, color 0.2s;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
     }
 
     .nav-container a:hover {
-      background-color: var(--accent-color);
-      color: #fff;
+      background-color: var(--card-bg);
+      color: var(--accent-orange);
+      border-color: var(--accent-orange);
     }
 
+    /* ESTRUCTURA GENERAL */
     .main-container {
       max-width: 1200px;
-      margin: 20px auto;
+      margin: 25px auto;
       padding: 0 20px;
       display: grid;
       grid-template-columns: 1fr 300px;
@@ -126,13 +142,13 @@
         grid-template-columns: 1fr;
       }
       .site-logo {
-        max-width: 240px;
+        max-width: 280px;
       }
     }
 
     .section-title {
-      font-size: 1.5rem;
-      color: var(--accent-color);
+      font-size: 1.4rem;
+      color: var(--accent-gold);
       border-bottom: 2px solid var(--border-color);
       padding-bottom: 8px;
       margin-top: 0;
@@ -140,12 +156,14 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    /* Grid de Juegos y Recursos */
+    /* GRID DE JUEGOS Y RECURSOS */
     .games-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin-bottom: 40px;
     }
@@ -158,17 +176,19 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s, border-color 0.2s;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
 
     .game-card:hover {
       transform: translateY(-4px);
-      border-color: #555;
+      border-color: var(--accent-blue);
+      box-shadow: 0 6px 15px rgba(13, 134, 205, 0.15);
     }
 
     .game-card h3 {
       margin-top: 0;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
+      color: var(--text-color);
     }
 
     .game-card.gaslands { border-top: 4px solid var(--color-gaslands); }
@@ -187,22 +207,23 @@
       background-color: var(--card-bg);
       color: #fff;
       text-decoration: none;
-      padding: 8px 14px;
+      padding: 10px 14px;
       border-radius: 4px;
       font-weight: 700;
       font-size: 0.85rem;
       text-align: center;
       margin-top: 15px;
       border: 1px solid var(--border-color);
-      transition: background-color 0.2s;
+      transition: all 0.2s ease;
     }
 
     .btn-link:hover {
-      background-color: var(--accent-color);
-      border-color: var(--accent-color);
+      background-color: var(--accent-orange);
+      border-color: var(--accent-orange);
+      color: #fff;
     }
 
-    /* Sección Eventos Principal */
+    /* SECCIÓN DE EVENTOS */
     .events-section {
       background-color: var(--panel-bg);
       border: 1px solid var(--border-color);
@@ -220,7 +241,7 @@
     }
 
     .event-item.other-event {
-      border-left-color: var(--accent-color);
+      border-left-color: var(--accent-orange);
     }
 
     .event-item:last-child {
@@ -236,26 +257,27 @@
     .event-badge {
       display: inline-block;
       font-size: 0.75rem;
-      font-weight: bold;
-      padding: 2px 6px;
+      font-weight: 900;
+      padding: 2px 8px;
       border-radius: 3px;
-      background-color: var(--color-nexo);
+      background-color: var(--accent-blue);
       color: #fff;
       margin-bottom: 6px;
+      letter-spacing: 0.5px;
     }
 
     .event-badge.other {
-      background-color: #555;
+      background-color: #455a64;
     }
 
     .event-date {
       font-size: 0.8rem;
-      color: var(--accent-color);
+      color: var(--accent-gold);
       font-weight: bold;
       margin-bottom: 8px;
     }
 
-    /* Sidebar y Publicidad AdSense */
+    /* SIDEBAR Y PUBLICIDAD */
     .sidebar {
       display: flex;
       flex-direction: column;
@@ -266,19 +288,19 @@
       background-color: var(--panel-bg);
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      padding: 15px;
+      padding: 18px;
     }
 
     .ad-container {
       text-align: center;
-      background-color: #181818;
+      background-color: #12161f;
       border: 1px solid var(--border-color);
       padding: 10px;
       border-radius: 6px;
     }
 
     .ad-label {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--text-muted);
       display: block;
       margin-bottom: 5px;
@@ -286,9 +308,9 @@
       letter-spacing: 0.5px;
     }
 
-    /* Pie de página */
+    /* PIE DE PÁGINA */
     footer {
-      background-color: #181818;
+      background-color: #0b0e13;
       border-top: 1px solid var(--border-color);
       padding: 25px 20px;
       text-align: center;
@@ -298,7 +320,7 @@
     }
 
     footer a {
-      color: var(--accent-color);
+      color: var(--accent-orange);
       text-decoration: none;
       font-weight: bold;
     }
@@ -316,7 +338,7 @@
 
   <header>
     <div class="header-container">
-      <!-- LOGO DE CET PHOENIX -->
+      <!-- LOGO CON LINK AL INICIO -->
       <a href="/">
         <img src="logo.png" alt="Cet Phoenix - Estrategia, Wargames, Diversión" class="site-logo">
       </a>
@@ -329,7 +351,7 @@
       <a href="#eventos">Eventos & Agenda</a>
       <a href="#recursos">Recursos Wargames</a>
       <a href="/gaslands-builder/">Gaslands Builder</a>
-      <a href="#nosotros">Nexo Alpha</a>
+      <a href="#nosotros">Sobre Cet Phoenix</a>
     </div>
   </nav>
 
@@ -347,7 +369,7 @@
           <span class="event-badge">NEXO ALPHA</span>
           <h4>Encuentros Semanales del Club Nexo Alpha</h4>
           <div class="event-date">Todos los fines de semana | Huancayo</div>
-          <p>Tardes de wargames alternativos, torneos relámpago, partidas demostrativas y taller de pintura. ¡Tratamos juegos como Gaslands, Blood Bowl, Grimdark Future y Last Days!</p>
+          <p>Tardes de wargames alternativos, torneos relámpago, partidas demostrativas y taller de pintura. ¡Jugamos Gaslands, Blood Bowl, Grimdark Future y Last Days!</p>
         </div>
 
         <!-- Evento Nexo Alpha (Ligas) -->
@@ -439,9 +461,9 @@
 
       <!-- SOBRE CET PHOENIX & NEXO ALPHA -->
       <div class="sidebar-widget" id="nosotros">
-        <h3 style="margin-top: 0; color: var(--accent-color);">Cet Phoenix</h3>
+        <h3 style="margin-top: 0; color: var(--accent-orange);">Cet Phoenix</h3>
         <p style="font-size: 0.85rem; color: var(--text-muted);">
-          Espacio dedicado a la creación y difusión de recursos para wargames, herramientas de desarrollo y divulgación de actividades del <strong>Club de Juegos Alternativos Nexo Alpha</strong>[cite: 1].
+          Espacio dedicado a la creación y difusión de recursos para wargames, herramientas de desarrollo y divulgación de actividades del <strong>Club de Juegos Alternativos Nexo Alpha</strong> en Huancayo, Perú[cite: 1].
         </p>
       </div>
 
