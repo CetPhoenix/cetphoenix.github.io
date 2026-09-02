@@ -18,19 +18,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
   <style>
-    /* PALETA DE COLORES EXTRAÍDA DEL LOGO CET PHOENIX */
+    /* PALETA DE COLORES EXTRAÍDA DE CET PHOENIX */
     :root {
       --bg-color: #0f1319;            /* Fondo azul noche muy oscuro */
-      --panel-bg: #161b22;          /* Panel contenedor ligeramente más claro */
+      --panel-bg: #161b22;          /* Panel contenedor */
       --card-bg: #1f2631;           /* Fondo de tarjetas */
-      --accent-orange: #f57c00;      /* Naranja Fuego del Fénix */
-      --accent-blue: #0d86cd;        /* Azul Eléctrico/Cibernético del Fénix */
+      --accent-orange: #f57c00;      /* Naranja Fuego */
+      --accent-blue: #0d86cd;        /* Azul Eléctrico */
       --accent-gold: #ffa726;        /* Oro/Ámbar de acentos */
       --text-color: #f0f4f8;        /* Blanco cálido legible */
       --text-muted: #9eb1c2;        /* Gris azulado atenuado */
-      --border-color: #2b3544;      /* Borde oscuro con matiz azul */
+      --border-color: #2b3544;      /* Borde oscuro */
 
-      /* Colores temáticos para etiquetas de juegos */
+      /* Colores temáticos para juegos */
       --color-gaslands: #f57c00;
       --color-bloodbowl: #d32f2f;
       --color-grimdark: #8e24aa;
@@ -51,13 +51,12 @@
       line-height: 1.6;
     }
 
-    /* HEADER CON RESPLANDOR TIPO FÉNIX */
+    /* HEADER TEXTUAL CON COLORES Y DEGRADADO CET PHOENIX */
     header {
       background: linear-gradient(180deg, #121820 0%, #0f1319 100%);
       border-bottom: 3px solid var(--accent-orange);
-      padding: 30px 20px 20px;
+      padding: 35px 20px 25px;
       text-align: center;
-      position: relative;
     }
 
     .header-container {
@@ -66,28 +65,38 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 6px;
     }
 
-    .site-logo {
-      max-width: 380px;
-      height: auto;
-      display: block;
-      /* Resplandor suave dual (naranja / azul) detrás del logo */
-      filter: drop-shadow(0 0 20px rgba(245, 124, 0, 0.25)) drop-shadow(0 0 20px rgba(13, 134, 205, 0.25));
-      transition: transform 0.3s ease;
+    /* TÍTULO PRINCIPAL CET PHOENIX EN TEXTO */
+    .site-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin: 0;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-gold) 50%, var(--accent-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
     }
 
-    .site-logo:hover {
-      transform: scale(1.02);
+    /* LEMA INFERIOR DE CET PHOENIX */
+    .site-tagline {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-color);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 2px;
+      margin-bottom: 6px;
     }
 
-    header p {
+    header p.sub-description {
       margin: 0;
       color: var(--text-muted);
-      font-size: 1.05rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+      font-weight: 400;
     }
 
     /* NAVEGACIÓN PRINCIPAL */
@@ -141,8 +150,12 @@
       .main-container {
         grid-template-columns: 1fr;
       }
-      .site-logo {
-        max-width: 280px;
+      .site-title {
+        font-size: 2.2rem;
+      }
+      .site-tagline {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
       }
     }
 
@@ -338,11 +351,9 @@
 
   <header>
     <div class="header-container">
-      <!-- LOGO CON LINK AL INICIO -->
-      <a href="/">
-        <img src="logo.png" alt="Cet Phoenix - Estrategia, Wargames, Diversión" class="site-logo">
-      </a>
-      <p>Recursos para Wargames, Juegos Alternativos & Eventos de Nexo Alpha</p>
+      <h1 class="site-title">CETPHOENIX</h1>
+      <div class="site-tagline">ESTRATEGIA | WARGAMES | DIVERSIÓN</div>
+      <p class="sub-description">Recursos para Wargames, Juegos Alternativos & Eventos de Nexo Alpha</p>
     </div>
   </header>
 
