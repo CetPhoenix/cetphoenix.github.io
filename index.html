@@ -6,8 +6,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexo Alpha - Club de Juegos Alternativos & Wargames</title>
-  <meta name="description" content="Portal oficial de Nexo Alpha en Huancayo: eventos, recursos, builders y guías de juegos de mesa alternativos, wargames, Blood Bowl, Gaslands Refuelled, Grimdark Future y Last Days.">
+  <title>Cet Phoenix - Recursos para Wargames & Eventos Nexo Alpha</title>
+  <meta name="description" content="Portal oficial de Cet Phoenix: recursos, herramientas y builders para wargames, así como información y cobertura de eventos de Nexo Alpha y la comunidad de juegos de mesa.">
 
   <!-- Fuente Google Fonts (Roboto) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -133,7 +133,7 @@
       gap: 10px;
     }
 
-    /* Grid de Juegos */
+    /* Grid de Juegos y Recursos */
     .games-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -193,7 +193,7 @@
       border-color: var(--accent-color);
     }
 
-    /* Sección Eventos Nexo Alpha */
+    /* Sección Eventos Principal */
     .events-section {
       background-color: var(--panel-bg);
       border: 1px solid var(--border-color);
@@ -210,6 +210,10 @@
       margin-bottom: 15px;
     }
 
+    .event-item.other-event {
+      border-left-color: var(--accent-color);
+    }
+
     .event-item:last-child {
       margin-bottom: 0;
     }
@@ -218,6 +222,21 @@
       margin: 0 0 5px 0;
       font-size: 1.1rem;
       color: #fff;
+    }
+
+    .event-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 3px;
+      background-color: var(--color-nexo);
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .event-badge.other {
+      background-color: #555;
     }
 
     .event-date {
@@ -288,17 +307,17 @@
 
   <header>
     <div class="header-container">
-      <h1>Nexo Alpha</h1>
-      <p>Comunidad & Club de Juegos Alternativos, Wargames y Juegos de Mesa</p>
+      <h1>Cet Phoenix</h1>
+      <p>Recursos para Wargames, Juegos Alternativos & Eventos de Nexo Alpha</p>
     </div>
   </header>
 
   <nav>
     <div class="nav-container">
-      <a href="#eventos">Eventos Nexo Alpha</a>
-      <a href="#juegos">Juegos de Mesa</a>
+      <a href="#eventos">Eventos & Agenda</a>
+      <a href="#recursos">Recursos Wargames</a>
       <a href="/gaslands-builder/">Gaslands Builder</a>
-      <a href="#comunidad">Comunidad</a>
+      <a href="#nosotros">Nexo Alpha</a>
     </div>
   </nav>
 
@@ -307,61 +326,73 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main>
       
-      <!-- SECCIÓN EVENTOS Y NOVEDADES -->
+      <!-- SECCIÓN EVENTOS (NEXO ALPHA & OTROS) -->
       <section id="eventos" class="events-section">
-        <h2 class="section-title">🎲 Eventos & Torneos - Nexo Alpha</h2>
+        <h2 class="section-title">📅 Agenda de Eventos & Torneos</h2>
         
+        <!-- Evento Nexo Alpha (Principal) -->
         <div class="event-item">
-          <h4>Encuentros Semanales de Juegos Alternativos</h4>
+          <span class="event-badge">NEXO ALPHA</span>
+          <h4>Encuentros Semanales del Club Nexo Alpha</h4>
           <div class="event-date">Todos los fines de semana | Huancayo</div>
-          <p>Mesas abiertas para partidas demostrativas, torneos relámpago, talleres de pintura y ligas de wargames alternativos. ¡Trae tus miniaturas o aprende a jugar con las nuestras!</p>
+          <p>Tardes de wargames alternativos, torneos relámpago, partidas demostrativas y taller de pintura. ¡Tratamos juegos como Gaslands, Blood Bowl, Grimdark Future y Last Days!</p>
         </div>
 
+        <!-- Evento Nexo Alpha (Ligas) -->
         <div class="event-item">
-          <h4>Próximos Torneos y Ligas</h4>
+          <span class="event-badge">NEXO ALPHA</span>
+          <h4>Próximas Ligas y Torneos Locales</h4>
           <div class="event-date">Próximamente</div>
-          <p>Mantente al tanto de la programación oficial para las ligas locales de Gaslands Refuelled, Blood Bowl y partidas narrativas de Last Days & Grimdark Future.</p>
+          <p>Atento a las convocatorias oficiales para la liga local de Gaslands Refuelled, encuentros de Blood Bowl y campañas narrativas de supervivencia.</p>
+        </div>
+
+        <!-- Otros Eventos de la Comunidad -->
+        <div class="event-item other-event">
+          <span class="event-badge other">COMUNIDAD</span>
+          <h4>Ferias, Exhibiciones y Eventos Afines</h4>
+          <div class="event-date">Fechas Variables</div>
+          <p>Difusión de ferias coleccionistas, torneos invitados y actividades de juegos de mesa y TCGs en la región.</p>
         </div>
       </section>
 
-      <!-- SECCIÓN CATÁLOGO DE JUEGOS -->
-      <section id="juegos">
-        <h2 class="section-title">🏆 Nuestros Juegos Destacados</h2>
+      <!-- SECCIÓN RECURSOS Y HERRAMIENTAS PARA WARGAMES -->
+      <section id="recursos">
+        <h2 class="section-title">🎲 Recursos & Herramientas para Wargames</h2>
         
         <div class="games-grid">
           
           <!-- GASLANDS REFUELLED -->
           <div class="game-card gaslands">
             <h3>Gaslands Refuelled</h3>
-            <p>Carreras armadas y combate vehicular post-apocalíptico utilizando coches a escala 1:64 (Hot Wheels, Matchbox). Diseña tu escudería con armas, mejoras y patrocinadores.</p>
-            <a href="/gaslands-builder/" class="btn-link">🛠️ Ir al creador de Escuderías (Builder)</a>
+            <p>Combate vehicular post-apocalíptico con coches 1:64. Crea tus listas de escudería, calcula bidones, equipamiento y genera fichas imprimibles o prompts para IA.</p>
+            <a href="/gaslands-builder/" class="btn-link">🛠️ Creador de Escuderías (Builder)</a>
           </div>
 
           <!-- BLOOD BOWL -->
           <div class="game-card bloodbowl">
             <h3>Blood Bowl</h3>
-            <p>El legendario juego de fútbol americano fantástico. Estrategia, placajes brutales, pases arriesgados y gestión de equipos en el universo de fantasía.</p>
-            <a href="#" class="btn-link">📖 Guías y Reglas</a>
+            <p>Fútbol americano fantástico. Hojas de referencia rápida, guías de plantillas de equipos, reglas de ligas y ayuda para entrenadores.</p>
+            <a href="#" class="btn-link">📖 Ver Recursos</a>
           </div>
 
           <!-- GRIMDARK FUTURE -->
           <div class="game-card grimdark">
             <h3>Grimdark Future</h3>
-            <p>Wargame de batallas de ciencia ficción (OnePageRules) diseñado con reglas ágiles, partidas rápidas y balanceadas para usar con cualquier línea de miniaturas.</p>
-            <a href="#" class="btn-link">⚔️ Recursos y Listas</a>
+            <p>Wargame de batallas de ciencia ficción ágil y equilibrado (OPR). Reglas resumidas, traductores de listas y recursos comunitarios.</p>
+            <a href="#" class="btn-link">⚔️ Ver Recursos</a>
           </div>
 
           <!-- LAST DAYS: ZOMBIE APOCALYPSE -->
           <div class="game-card lastdays">
             <h3>Last Days: Zombie Apocalypse</h3>
-            <p>Juego de escaramuzas con miniaturas enfocado en la supervivencia. Lidera un grupo de supervivientes, busca suministros y enfréntate tanto a bandas enemigas como a hordas de caminantes.</p>
-            <a href="#" class="btn-link">🧟 Campañas y Reglas</a>
+            <p>Juego de escaramuzas de supervivencia zombie. Hojas de control de refugio, campañas narrativas y tablas de generación de encuentros.</p>
+            <a href="#" class="btn-link">🧟 Ver Recursos</a>
           </div>
 
         </div>
       </section>
 
-      <!-- ANUNCIO CENTRAL (RESPONSIVO) -->
+      <!-- BANNER DE ANUNCIO CENTRAL -->
       <div class="ad-container" style="margin-bottom: 30px;">
         <span class="ad-label">PUBLICIDAD</span>
         <ins class="adsbygoogle"
@@ -380,7 +411,7 @@
     <!-- BARRA LATERAL (SIDEBAR) -->
     <aside class="sidebar">
       
-      <!-- WIDGET ANUNCIO ADSENSE SIDEBAR -->
+      <!-- BANNER DE ANUNCIO LATERAL -->
       <div class="ad-container">
         <span class="ad-label">PUBLICIDAD</span>
         <ins class="adsbygoogle"
@@ -394,11 +425,11 @@
         </script>
       </div>
 
-      <!-- WIDGET SOBRE NOSOTROS -->
-      <div class="sidebar-widget">
-        <h3 style="margin-top: 0; color: var(--accent-color);">Sobre Nexo Alpha</h3>
+      <!-- SOBRE CET PHOENIX & NEXO ALPHA -->
+      <div class="sidebar-widget" id="nosotros">
+        <h3 style="margin-top: 0; color: var(--accent-color);">Cet Phoenix</h3>
         <p style="font-size: 0.85rem; color: var(--text-muted);">
-          Somos una iniciativa orientada a promover la cultura de los juegos de mesa alternativos, wargames de escaramuzas, juegos de cartas y modelismo en Huancayo, Perú.
+          Espacio dedicado a la creación y difusión de recursos para wargames, herramientas de desarrollo y divulgación de actividades del <strong>Club de Juegos Alternativos Nexo Alpha</strong> en Huancayo, Perú.
         </p>
       </div>
 
@@ -406,10 +437,10 @@
 
   </div>
 
-  <!-- PIE DE PÁGINA CON ENLACES A POLÍTICAS (REQUISITO ADSENSE) -->
+  <!-- PIE DE PÁGINA (REQUISITO ADSENSE) -->
   <footer>
     <div>
-      © 2026 Nexo Alpha - Creado por <a href="mailto:cespinal826@gmail.com">Christ E. - Cet Phoenix</a>
+      © 2026 Cet Phoenix - Desarrollado por <a href="mailto:cespinal826@gmail.com">Christ E.</a>
     </div>
     <div class="footer-links">
       <a href="privacy-policy.html">Política de Privacidad</a> | 
